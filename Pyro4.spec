@@ -4,7 +4,7 @@
 #
 Name     : Pyro4
 Version  : 4.73
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/57/6d/ab2d8f71cb7c25d9b341459a52d4dde775408fbc7e7ef374443f699d2dc0/Pyro4-4.73.tar.gz
 Source0  : https://files.pythonhosted.org/packages/57/6d/ab2d8f71cb7c25d9b341459a52d4dde775408fbc7e7ef374443f699d2dc0/Pyro4-4.73.tar.gz
 Summary  : distributed object middleware for Python (RPC)
@@ -12,7 +12,9 @@ Group    : Development/Tools
 License  : MIT
 Requires: Pyro4-bin
 Requires: Pyro4-python3
+Requires: Pyro4-license
 Requires: Pyro4-python
+Requires: serpent
 BuildRequires : buildreq-distutils3
 BuildRequires : pluggy
 BuildRequires : py-python
@@ -33,9 +35,18 @@ It is a library that enables you to build applications in which
 %package bin
 Summary: bin components for the Pyro4 package.
 Group: Binaries
+Requires: Pyro4-license
 
 %description bin
 bin components for the Pyro4 package.
+
+
+%package license
+Summary: license components for the Pyro4 package.
+Group: Default
+
+%description license
+license components for the Pyro4 package.
 
 
 %package python
@@ -65,11 +76,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533509229
+export SOURCE_DATE_EPOCH=1537553164
 python3 setup.py build -b py3
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/Pyro4
+cp LICENSE %{buildroot}/usr/share/doc/Pyro4/LICENSE
+cp docs/source/license.rst %{buildroot}/usr/share/doc/Pyro4/docs_source_license.rst
 python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -86,6 +100,11 @@ echo ----[ mark ]----
 /usr/bin/pyro4-ns
 /usr/bin/pyro4-nsc
 /usr/bin/pyro4-test-echoserver
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/Pyro4/LICENSE
+/usr/share/doc/Pyro4/docs_source_license.rst
 
 %files python
 %defattr(-,root,root,-)
