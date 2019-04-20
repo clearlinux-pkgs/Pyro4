@@ -4,7 +4,7 @@
 #
 Name     : Pyro4
 Version  : 4.75
-Release  : 5
+Release  : 6
 URL      : https://files.pythonhosted.org/packages/a9/e6/07950f8efd3e6c781c46873c4f346fa6e56ca99330803511c956edd1096b/Pyro4-4.75.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a9/e6/07950f8efd3e6c781c46873c4f346fa6e56ca99330803511c956edd1096b/Pyro4-4.75.tar.gz
 Summary  : distributed object middleware for Python (RPC)
