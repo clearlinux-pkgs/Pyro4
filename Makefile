@@ -1,5 +1,5 @@
 PKG_NAME := Pyro4
-URL = https://files.pythonhosted.org/packages/01/02/27c48986d0bf2e42ef42591e796261d4dbb6466da81957071479d99017ed/Pyro4-4.77.tar.gz
+URL = https://files.pythonhosted.org/packages/25/ac/cc83059cd897b7dea44186a76b114ab0dbfe69d69bc10ea4d1029dcb2a6c/Pyro4-4.78.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
