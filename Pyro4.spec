@@ -4,7 +4,7 @@
 #
 Name     : Pyro4
 Version  : 4.79
-Release  : 13
+Release  : 14
 URL      : https://files.pythonhosted.org/packages/ff/38/b842c05c6842c54cf2677e8b382299e606163d03268221d6aab54459047b/Pyro4-4.79.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ff/38/b842c05c6842c54cf2677e8b382299e606163d03268221d6aab54459047b/Pyro4-4.79.tar.gz
 Summary  : distributed object middleware for Python (RPC)
@@ -57,6 +57,7 @@ python components for the Pyro4 package.
 Summary: python3 components for the Pyro4 package.
 Group: Default
 Requires: python3-core
+Provides: pypi(Pyro4)
 
 %description python3
 python3 components for the Pyro4 package.
@@ -71,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581992753
+export SOURCE_DATE_EPOCH=1583209099
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
