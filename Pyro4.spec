@@ -4,7 +4,7 @@
 #
 Name     : Pyro4
 Version  : 4.79
-Release  : 14
+Release  : 15
 URL      : https://files.pythonhosted.org/packages/ff/38/b842c05c6842c54cf2677e8b382299e606163d03268221d6aab54459047b/Pyro4-4.79.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ff/38/b842c05c6842c54cf2677e8b382299e606163d03268221d6aab54459047b/Pyro4-4.79.tar.gz
 Summary  : distributed object middleware for Python (RPC)
@@ -19,12 +19,14 @@ BuildRequires : buildreq-distutils3
 BuildRequires : serpent
 
 %description
-This is an example that more or less presents an online multiplayer game.
-The game is a robot destruction derby.
-It is played on a grid. There are some obstructing walls on the grid that
-hurt when you collide into them. If you collide into another robot, the
-other robot takes damage. All robots start with a certain amount of health.
-If it reaches zero, the robot dies.  The last man standing wins!
+It is a library that enables you to build applications in which
+        objects can talk to eachother over the network, with minimal programming effort.
+        You can just use normal Python method calls, with almost every possible parameter
+        and return value type, and Pyro takes care of locating the right object on the right
+        computer to execute the method. It is designed to be very easy to use, and to
+        generally stay out of your way. But it also provides a set of powerful features that
+        enables you to build distributed applications rapidly and effortlessly.
+        Pyro is a pure Python library and runs on many different platforms and Python versions.
 
 %package bin
 Summary: bin components for the Pyro4 package.
@@ -57,7 +59,8 @@ python components for the Pyro4 package.
 Summary: python3 components for the Pyro4 package.
 Group: Default
 Requires: python3-core
-Provides: pypi(Pyro4)
+Provides: pypi(pyro4)
+Requires: pypi(serpent)
 
 %description python3
 python3 components for the Pyro4 package.
@@ -72,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583209099
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583521282
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
